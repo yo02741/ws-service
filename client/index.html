@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WS!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <span>連線狀態: {{ isConnected ? '連線中' : '尚未連線' }}</span>
+    <br><br>
+    <button @click="connect">{{ !isConnected ? '連線' : '斷線' }}</button>
+    <br><br>
+    <pre>{{ ws }}</pre>
+    <br><br>
+    <div>
+      <input type="text" v-model="txt" style="margin-right: 5px;">
+      <button @click="sendData">click</button>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
